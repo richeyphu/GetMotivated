@@ -1,5 +1,10 @@
 export const isSusDomain = async (url: string) => {
   const name = new URL(url).hostname;
+
+  if (susDomains.includes(name)) {
+    return true;
+  }
+
   const dnsUrl = `https://family.cloudflare-dns.com/dns-query?name=${name}`;
   const response = await fetch(dnsUrl, {
     headers: {
@@ -14,3 +19,5 @@ export const isSusDomain = async (url: string) => {
 
   return json.Answer[0].data === '0.0.0.0';
 };
+
+export const susDomains = ['hifumin.app'];
