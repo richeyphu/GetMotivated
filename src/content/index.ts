@@ -1,9 +1,7 @@
 import './styles.css';
-import { isSusDomain } from '../utils';
 
-// get svelte storage
-// import { get } from 'svelte/store';
-import { storage } from '../storage'
+import { isSusDomain } from '../utils';
+import { storage } from '../storage';
 
 // Get the current tab's URL
 const tabUrl = location.href;
@@ -52,7 +50,7 @@ const tabUrl = location.href;
     video.addEventListener('ended', () => {
       const redirs = [
         'https://youtu.be/dQw4w9WgXcQ',
-        'https://youtu.be/0YMp8N3zFbE'
+        'https://youtu.be/0YMp8N3zFbE',
       ];
       location.href = redirs.sort(() => 0.5 - Math.random())[0];
     });
