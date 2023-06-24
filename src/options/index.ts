@@ -1,4 +1,4 @@
-import Options from 'src/components/Options.svelte';
+import Options from 'src/components/MotivatedOptions.svelte';
 import { storage } from 'src/storage';
 
 const target = document.getElementById('app');

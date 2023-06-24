@@ -1,13 +1,13 @@
-export const motivatedBy = ["vergil", "yee", "nanomachines"]
-export type IMotivatedBy = typeof motivatedBy[number]
+export const motivatedByList = ["vergil", "yee", "nanomachines"]
+export type IMotivatedBy = typeof motivatedByList[number]
 
 type IStorage = {
-  // motivatedBy: IMotivatedBy;
+  motivatedBy: IMotivatedBy;
   getMotivated: boolean;
 };
 
 const defaultStorage: IStorage = {
-  // motivatedBy: "vergil"
+  motivatedBy: "vergil",
   getMotivated: true,
 };
 

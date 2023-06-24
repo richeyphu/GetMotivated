@@ -3,22 +3,27 @@
   import { onMount } from 'svelte';
   
   import MotivatedSwitch from './MotivatedSwitch.svelte';
+  import MotivatedOptions from './MotivatedOptions.svelte';
 
-  // let motivatedBy: IMotivatedBy = "none";
+  let motivatedBy: IMotivatedBy = "vergil";
   let getMotivated: boolean = false;
 
   onMount(() => {
     storage.get().then((storage) => {
       getMotivated = storage.getMotivated;
+      
     });
   });
 </script>
 
 <div class="overlay">
   <h1 class="h1">Get Motivated</h1>
+
   <MotivatedSwitch {getMotivated} />
-  <h2 class="footer">be motivated</h2>
-  <!-- <Options {motivatedBy} /> -->
+
+  <MotivatedOptions {motivatedBy} />
+
+  <h2 class="footer">Stop hornie, be motivated <br />- Vergil</h2>
   <img src="../assets/icons/icon16.png" alt="😉" />
 </div>
 
@@ -33,7 +38,7 @@
     flex-direction: column;
     align-items: center;
   }
-  .h1 {
+  h1 {
     margin: 0;
     font-size: 16px;
     padding-bottom: 6px;
