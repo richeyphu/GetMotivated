@@ -1,13 +1,17 @@
+export const motivatedBy = ["vergil", "yee", "nanomachines"]
+export type IMotivatedBy = typeof motivatedBy[number]
+
 type IStorage = {
-  count: number;
+  // motivatedBy: IMotivatedBy;
+  getMotivated: boolean;
 };
 
 const defaultStorage: IStorage = {
-  count: 0,
+  // motivatedBy: "vergil"
+  getMotivated: true,
 };
 
 export const storage = {
-  get: (): Promise<IStorage> =>
-    chrome.storage.sync.get(defaultStorage) as Promise<IStorage>,
-  set: (value: IStorage): Promise<void> => chrome.storage.sync.set(value),
+  get: () => chrome.storage.local.get(defaultStorage),
+  set: (value: IStorage) => chrome.storage.local.set(value),
 };
