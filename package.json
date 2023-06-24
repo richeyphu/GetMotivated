@@ -1,7 +1,7 @@
 {
   "name": "get-motivated",
   "version": "0.1.0",
-  "description": "Be motivated...",
+  "description": "Stop hornie, be motivated.",
   "main": "index.js",
   "type": "module",
   "scripts": {
