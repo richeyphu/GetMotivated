@@ -2,7 +2,7 @@ import './styles.css';
 
 const videoUrl = chrome.runtime.getURL('src/assets/vergil.mp4');
 
-const vergilEl = `
+const motivatedEl = `
   <video class="motivated-vid" src="${videoUrl}"></video>
 
   <div class="motivated-box">
@@ -10,7 +10,8 @@ const vergilEl = `
   </div>              
 `;
 
-document.body.insertAdjacentHTML('beforeend', vergilEl);
+// Inject the element into the page
+document.body.insertAdjacentHTML('beforeend', motivatedEl);
 
 const box: HTMLDivElement = document.querySelector('.motivated-box');
 const video: HTMLVideoElement = document.querySelector('.motivated-vid');
@@ -24,7 +25,7 @@ const ctx = c.getContext('2d');
 
 video.addEventListener('play', drawVid);
 video.addEventListener('ended', () => {
-  location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+  location.href = 'https://youtu.be/dQw4w9WgXcQ';
 });
 
 box.addEventListener('click', () => {
