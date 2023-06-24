@@ -33,5 +33,11 @@
       "128": "src/assets/icons/icon128.png"
     }
   },
-  "permissions": ["storage", "tabs"]
+  "permissions": ["storage", "tabs"],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/assets/vergil.mp4"],
+      "matches": ["https://*/*"]
+    }
+  ]
 }

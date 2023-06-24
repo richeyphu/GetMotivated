@@ -1,3 +1,20 @@
-body {
-    background: rgba(232, 240, 254, 0.4) !important;
+.motivated-vid {
+  position: absolute;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.motivated-vid-box {
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
