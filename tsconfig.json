@@ -2,13 +2,13 @@
   "compilerOptions": {
     "strict": true,
     "target": "ESNext",
-    "moduleResolution": "bundler",
-    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "module": "ES2015",
     "esModuleInterop": true,
     "sourceMap": false,
     "rootDir": "src",
     "outDir": "dist",
     "noEmitOnError": true,
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types"],
   }
 }
