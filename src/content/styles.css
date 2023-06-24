@@ -9,11 +9,11 @@
 }
 
 .motivated-vid-box {
-  z-index: 9999;
+  z-index: 2147483647;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

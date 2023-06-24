@@ -17,7 +17,7 @@ const video: HTMLVideoElement = document.querySelector('.motivated-vid');
 let width = video.clientWidth;
 let height = video.clientHeight;
 
-const c: HTMLCanvasElement = document.querySelector('canvas');
+const c: HTMLCanvasElement = document.querySelector('.motivated-vid-box');
 c.setAttribute('width', String(width));
 c.setAttribute('height', String(height));
 const ctx = c.getContext('2d');
