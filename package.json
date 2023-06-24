@@ -1,0 +1,21 @@
+{
+  "name": "get-motivated",
+  "version": "1.0.0",
+  "description": "Be motivated...",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write \"src/**/*.ts\""
+  },
+  "keywords": [],
+  "author": "Phu & Unn",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.238",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.3"
+  }
+}
