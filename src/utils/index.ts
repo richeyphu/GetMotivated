@@ -1,0 +1,1 @@
+export { isSusDomain } from './checkUrl';

@@ -9,6 +9,9 @@
     "48": "src/assets/icons/icon48.png",
     "128": "src/assets/icons/icon128.png"
   },
+  "omnibox": {
+    "keyword": "vergil"
+  },
   "content_scripts": [
     {
       "matches": ["https://*/*"],
@@ -30,5 +33,5 @@
       "128": "src/assets/icons/icon128.png"
     }
   },
-  "permissions": ["storage"]
+  "permissions": ["storage", "tabs"]
 }
