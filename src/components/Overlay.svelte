@@ -11,7 +11,6 @@
   onMount(() => {
     storage.get().then((storage) => {
       getMotivated = storage.getMotivated;
-      
     });
   });
 </script>
@@ -22,8 +21,9 @@
   <MotivatedSwitch {getMotivated} />
 
   <MotivatedOptions {motivatedBy} />
+  <h2 class="footer" style="padding-top: 12px;">Need to reload page to apply new settings</h2>
 
-  <h2 class="footer">Stop hornie, be motivated <br />- Vergil</h2>
+  <h2 class="footer">Stop hornie, be motivated <br /><span style="font-style: italic;">- Vergil<span></h2>
   <img src="../assets/icons/icon16.png" alt="😉" />
 </div>
 
@@ -47,7 +47,7 @@
   .footer {
     margin: 0;
     font-size: 12px;
-    padding-top: 36px;
+    padding-top: 24px;
     padding-bottom: 4px;
     font-weight: normal;
   }

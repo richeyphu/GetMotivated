@@ -2,23 +2,37 @@ import './styles.css';
 import { isSusDomain } from '../utils';
 
 // get svelte storage
-import { get } from 'svelte/store';
+// import { get } from 'svelte/store';
 import { storage } from '../storage'
-
-const videoUrl = chrome.runtime.getURL('src/assets/vergil.mp4');
-
-const motivatedEl = `
-  <video class="motivated-vid" src="${videoUrl}"></video>
-
-  <div class="motivated-box">
-      <canvas class="motivated-vid-box"></canvas>
-  </div>              
-`;
 
 // Get the current tab's URL
 const tabUrl = location.href;
 
 (async () => {
+  const { getMotivated, motivatedBy } = await storage.get();
+
+  let videoUrl;
+  if (getMotivated) {
+    // get motivateBy from storage
+    try {
+      videoUrl = chrome.runtime.getURL(`src/assets/${motivatedBy}.mp4`);
+      console.log(motivatedBy);
+    } catch (e) {
+      videoUrl = chrome.runtime.getURL(`src/assets/vergil.mp4`);
+      console.error(e);
+    }
+  } else {
+    return;
+  }
+
+  const motivatedEl = `
+    <video class="motivated-vid" src="${videoUrl}"></video>
+
+    <div class="motivated-box">
+        <canvas class="motivated-vid-box"></canvas>
+    </div>              
+  `;
+
   // Check if the URL is sus
   if (await isSusDomain(tabUrl)) {
     // Inject the element into the page
@@ -36,7 +50,11 @@ const tabUrl = location.href;
 
     video.addEventListener('play', drawVid);
     video.addEventListener('ended', () => {
-      location.href = 'https://youtu.be/dQw4w9WgXcQ';
+      const redirs = [
+        'https://youtu.be/dQw4w9WgXcQ',
+        'https://youtu.be/0YMp8N3zFbE'
+      ];
+      location.href = redirs.sort(() => 0.5 - Math.random())[0];
     });
 
     box.addEventListener('click', () => {
@@ -45,19 +63,31 @@ const tabUrl = location.href;
 
     function drawVid() {
       ctx.drawImage(video, 0, 0, width, height);
+      // vergil
 
       // Remove green screen
       let frame = ctx.getImageData(0, 0, width, height);
-      for (let i = 0; i < frame.data.length; i += 4) {
-        let r = frame.data[i]; // red
-        let g = frame.data[i + 1]; // green
-        let b = frame.data[i + 2]; // blue
-        if (r < 100 && g > 92 && g < 211 && b < 110) {
-          frame.data[i + 3] = 0;
+      // vergil val
+      if (motivatedBy === 'vergil') {
+        for (let i = 0; i < frame.data.length; i += 4) {
+          let r = frame.data[i]; // red
+          let g = frame.data[i + 1]; // green
+          let b = frame.data[i + 2]; // blue
+          if (r < 100 && g > 92 && g < 211 && b < 110) {
+            frame.data[i + 3] = 0;
+          }
+        }
+      } else if (motivatedBy === 'nanomachines') {
+        for (let i = 0; i < frame.data.length; i += 4) {
+          let r = frame.data[i]; // red
+          let g = frame.data[i + 1]; // green
+          let b = frame.data[i + 2]; // blue
+          if (r < 100 && g >= 170 && g <= 255 && b < 110) {
+            frame.data[i + 3] = 0;
+          }
         }
       }
       ctx.putImageData(frame, 0, 0);
-
       requestAnimationFrame(drawVid);
     }
   }
