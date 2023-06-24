@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Motivated - Demo</title>
+    <link rel="icon" type="image/png" href="../src/assets/icons/icon128.png" />
+
+    <style>
+      body {
+        background: #fff;
+      }
+
+      .vid {
+        position: absolute;
+        opacity: 0;
+        width: 100vw;
+        height: 100vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .vid-box {
+        z-index: 9999;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .content {
+        max-width: 768px;
+        margin: 0 auto;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <center>
+        <h1>
+          Get Motivated<br />
+          <small>Demo</small>
+        </h1>
+        <img src="../src/assets/icons/icon48.png" alt="Motivator" />
+      </center>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ipsum
+        vero porro nulla libero officiis corrupti quos sapiente vel dolores
+        aspernatur, sequi labore quam eligendi eum, autem nostrum!
+        Exercitationem, recusandae!
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse sit,
+        ipsum voluptates accusantium provident nobis asperiores laboriosam est.
+        Beatae, saepe? Ut consectetur dolorem sed ipsam veritatis velit libero
+        error itaque suscipit dolorum vero, iste ipsum mollitia earum! Vero
+        pariatur totam possimus omnis quo quisquam nemo, similique, accusamus
+        non dolore ut, itaque sit placeat natus asperiores eveniet
+        necessitatibus officiis? Consectetur sequi nihil magni pariatur,
+        molestias et officiis maxime commodi laboriosam adipisci cumque atque
+        molestiae omnis dignissimos possimus odit cupiditate reiciendis earum
+        vel maiores neque cum non doloribus minima! Quam repellat sapiente
+        assumenda commodi quaerat, officia voluptates eius voluptate magni fugit
+        enim.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+        aspernatur incidunt hic reprehenderit doloribus, fuga veniam. Aspernatur
+        tempora quod dicta, est cupiditate itaque, autem labore nam suscipit
+        laborum ratione quidem tempore, hic optio velit ipsam impedit
+        accusantium veritatis placeat nihil harum vero veniam corporis? Dolor,
+        perferendis sequi non aperiam iste fugit qui quam, rerum libero vitae
+        iure quia ad in fugiat praesentium quis necessitatibus illo eligendi
+        veritatis maxime temporibus tempora animi? Quasi dolor voluptatum
+        perspiciatis numquam nulla quia vel consequuntur est omnis perferendis
+        expedita, quibusdam itaque et! Veritatis, veniam! Dolore neque
+        consectetur iusto dolores eos vel blanditiis. Voluptatum, asperiores
+        officiis?
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ea sunt
+        sapiente repellat et eligendi alias eveniet exercitationem
+        necessitatibus iste quas quaerat, similique minima tenetur veniam quam
+        vel, iure animi consequuntur a sit aliquid molestiae neque praesentium?
+        Hic harum, labore, libero unde mollitia quibusdam esse nesciunt quisquam
+        necessitatibus assumenda nam.
+      </p>
+    </div>
+
+    <video class="vid" src="../src/assets/vergil.mp4"></video>
+
+    <div class="box">
+      <canvas class="vid-box"></canvas>
+    </div>
+
+    <script>
+      const box = document.querySelector('.box');
+      const video = document.querySelector('.vid');
+      let width = video.clientWidth;
+      let height = video.clientHeight;
+
+      const c = document.querySelector('canvas');
+      c.setAttribute('width', width);
+      c.setAttribute('height', height);
+      const ctx = c.getContext('2d');
+
+      video.addEventListener('play', drawVid);
+      video.addEventListener('ended', () => {
+        location.href = 'https://youtu.be/dQw4w9WgXcQ';
+      });
+
+      box.addEventListener('click', () => {
+        video.play();
+      });
+
+      function drawVid() {
+        ctx.drawImage(video, 0, 0, width, height);
+
+        // Remove green screen
+        let frame = ctx.getImageData(0, 0, width, height);
+        for (let i = 0; i < frame.data.length; i += 4) {
+          let r = frame.data[i]; // Red
+          let g = frame.data[i + 1]; // Green
+          let b = frame.data[i + 2]; // Blue
+          if (r < 100 && g > 92 && g < 211 && b < 110) {
+            frame.data[i + 3] = 0;
+          }
+        }
+        ctx.putImageData(frame, 0, 0);
+
+        requestAnimationFrame(drawVid);
+      }
+    </script>
+  </body>
+</html>
