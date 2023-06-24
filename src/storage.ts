@@ -1,4 +1,4 @@
-export const motivatedByList = ["vergil", "yee", "nanomachines"]
+export const motivatedByList = ["vergil", "yee", "nanomachines", "kiryu"]
 export type IMotivatedBy = typeof motivatedByList[number]
 
 type IStorage = {
