@@ -3,10 +3,10 @@ import { storage } from 'src/storage';
 
 const target = document.getElementById('app');
 
-function render() {
-  storage.get().then(({ count }) => {
-    new Options({ target, props: { count } });
-  });
-}
+// function render() {
+//   storage.get().then(({ count }) => {
+//     new Options({ target, props: { count } });
+//   });
+// }
 
-document.addEventListener('DOMContentLoaded', render);
+// document.addEventListener('DOMContentLoaded', render);

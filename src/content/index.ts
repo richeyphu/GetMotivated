@@ -1,6 +1,10 @@
 import './styles.css';
 import { isSusDomain } from '../utils';
 
+// get svelte storage
+import { get } from 'svelte/store';
+import { storage } from '../storage'
+
 const videoUrl = chrome.runtime.getURL('src/assets/vergil.mp4');
 
 const motivatedEl = `

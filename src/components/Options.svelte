@@ -1,16 +1,9 @@
-<script lang="ts">
-  import { storage } from '../storage';
+<!-- <script lang="ts">
+  import { storage } from 'src/storage';
 
-  export let count: number;
+  export let motivatedBy;
   let successMessage: string = null;
 
-  function increment() {
-    count += 1;
-  }
-
-  function decrement() {
-    count -= 1;
-  }
 
   function save() {
     storage.set({ count }).then(() => {
@@ -57,4 +50,4 @@
     color: #2ecc71;
     font-weight: bold;
   }
-</style>
+</style> -->

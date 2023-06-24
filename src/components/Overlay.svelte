@@ -1,26 +1,49 @@
 <script lang="ts">
-  import { storage } from 'src/storage';
+  import { storage, type IMotivatedBy } from 'src/storage';
   import { onMount } from 'svelte';
-  import Options from './Options.svelte';
+  
+  import MotivatedSwitch from './MotivatedSwitch.svelte';
 
-  let count = 0;
+  // let motivatedBy: IMotivatedBy = "none";
+  let getMotivated: boolean = false;
 
   onMount(() => {
-    storage.get().then((storage) => (count = storage.count));
+    storage.get().then((storage) => {
+      getMotivated = storage.getMotivated;
+    });
   });
 </script>
 
 <div class="overlay">
-  <Options {count} />
+  <h1 class="h1">Get Motivated</h1>
+  <MotivatedSwitch {getMotivated} />
+  <h2 class="footer">be motivated</h2>
+  <!-- <Options {motivatedBy} /> -->
+  <img src="../assets/icons/icon16.png" alt="😉" />
 </div>
 
 <style>
   .overlay {
     position: fixed;
-    top: 16px;
-    left: 16px;
+    width: 100%;
+    height: 100%;
     background-color: white;
-    border: 1px solid black;
-    padding: 4px;
+    /* padding: 4px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .h1 {
+    margin: 0;
+    font-size: 16px;
+    padding-bottom: 6px;
+    padding-top: 12px;
+  }
+  .footer {
+    margin: 0;
+    font-size: 12px;
+    padding-top: 36px;
+    padding-bottom: 4px;
+    font-weight: normal;
   }
 </style>
