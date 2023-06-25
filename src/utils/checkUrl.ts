@@ -28,5 +28,6 @@ export const isSusDomain = async (url: string) => {
 export const susDomains = [
   // Add custom sus domains here
   'somtam.vercel.app',
+  'cutehamster.vercel.app',
   'hifumin.app',
 ];
