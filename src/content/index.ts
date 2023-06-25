@@ -65,7 +65,6 @@ const tabUrl = location.href;
 
       // Remove green screen
       let frame = ctx.getImageData(0, 0, width, height);
-      // vergil val
       if (motivatedBy === 'vergil') {
         for (let i = 0; i < frame.data.length; i += 4) {
           let r = frame.data[i]; // red
@@ -81,6 +80,15 @@ const tabUrl = location.href;
           let g = frame.data[i + 1]; // green
           let b = frame.data[i + 2]; // blue
           if (r < 100 && g >= 170 && g <= 255 && b < 110) {
+            frame.data[i + 3] = 0;
+          }
+        }
+      } else if (motivatedBy === 'kiryu') {
+        for (let i = 0; i < frame.data.length; i += 4) {
+          let r = frame.data[i]; // red
+          let g = frame.data[i + 1]; // green
+          let b = frame.data[i + 2]; // blue
+          if (r < 90 && g >= 170 && g <= 255 && b < 100) {
             frame.data[i + 3] = 0;
           }
         }
