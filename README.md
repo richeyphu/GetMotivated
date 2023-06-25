@@ -7,11 +7,24 @@
 
 ## Features
 
-  - [x] Chrome Extension
-  - [x] Easy to use 
-  - [x] Choose the motivator of your choice
-  - [x] Auto-detect sus website
+- [x] Chrome Extension
+- [x] Easy to use
+- [x] Choose the motivator of your choice
+- [x] Auto-detect sussy website
+
+## Usage
+
+- Clone/fork this repository
+- Install dependencies: `pnpm install`
+- Run dev server: `pnpm dev`
+- Build the extension: `pnpm build`
+
+## Demo
+
+You can try the simple demo [here](https://richeyphu.github.io/GetMotivated/docs/demo.html).
 
 ---
 
 ![chair](https://i.kym-cdn.com/entries/icons/mobile/000/042/547/vergil_chair.jpg)
+
+> [The โง่ Hackathon ครั้งที่ 7 เเห่งประเทศ Thailand](https://stupid.hackathon.in.th/7/)
