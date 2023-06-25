@@ -23,7 +23,7 @@
   },
   "options_ui": {
     "page": "src/options/options.html",
-    "open_in_tab": true
+    "open_in_tab": false
   },
   "action": {
     "default_popup": "src/popup/popup.html",
