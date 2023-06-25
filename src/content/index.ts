@@ -9,18 +9,17 @@ const tabUrl = location.href;
 (async () => {
   const { getMotivated, motivatedBy } = await storage.get();
 
+  // Check if the user wants to get motivated
+  if (!getMotivated) return;
+
+  // Get motivatedBy video URL
   let videoUrl;
-  if (getMotivated) {
-    // get motivateBy from storage
-    try {
-      videoUrl = chrome.runtime.getURL(`src/assets/${motivatedBy}.mp4`);
-      console.log(motivatedBy);
-    } catch (e) {
-      videoUrl = chrome.runtime.getURL(`src/assets/vergil.mp4`);
-      console.error(e);
-    }
-  } else {
-    return;
+  try {
+    videoUrl = chrome.runtime.getURL(`src/assets/${motivatedBy}.mp4`);
+    console.log(motivatedBy);
+  } catch (e) {
+    videoUrl = chrome.runtime.getURL(`src/assets/vergil.mp4`);
+    console.error(e);
   }
 
   const motivatedEl = `
