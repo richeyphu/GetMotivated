@@ -11,7 +11,7 @@
 <h1>Motivated by: <span style="color:red">{motivatedBy}</span></h1>
 <div class="container">
   {#each motivatedByList as motivation}
-    <button on:click={()=>selectMotivation(motivation)}>{motivation}</button>
+    <button on:click={() => selectMotivation(motivation)}>{motivation}</button>
   {/each}
 </div>
 

@@ -1,5 +1,5 @@
-export const motivatedByList = ["vergil", "yee", "nanomachines", "kiryu"]
-export type IMotivatedBy = typeof motivatedByList[number]
+export const motivatedByList = ['vergil', 'yee', 'nanomachines', 'kiryu'];
+export type IMotivatedBy = (typeof motivatedByList)[number];
 
 type IStorage = {
   motivatedBy?: IMotivatedBy;
@@ -7,7 +7,7 @@ type IStorage = {
 };
 
 const defaultStorage: IStorage = {
-  motivatedBy: "vergil",
+  motivatedBy: 'vergil',
   getMotivated: true,
 };
 

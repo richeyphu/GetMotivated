@@ -1,11 +1,11 @@
 <script lang="ts">
   import { storage, type IMotivatedBy } from 'src/storage';
   import { onMount } from 'svelte';
-  
+
   import MotivatedSwitch from './MotivatedSwitch.svelte';
   import MotivatedOptions from './MotivatedOptions.svelte';
 
-  let motivatedBy: IMotivatedBy = "vergil";
+  let motivatedBy: IMotivatedBy = 'vergil';
   let getMotivated: boolean = false;
 
   onMount(() => {
@@ -21,9 +21,15 @@
   <MotivatedSwitch {getMotivated} />
 
   <MotivatedOptions {motivatedBy} />
-  <h2 class="footer" style="padding-top: 12px;">Need to reload page to apply new settings</h2>
+  <h2 class="footer" style="padding-top: 12px;">
+    Need to reload page to apply new settings
+  </h2>
 
-  <h2 class="footer">Stop hornie, be motivated <br /><span style="font-style: italic;">- Vergil<span></h2>
+  <h2 class="footer">
+    Stop hornie, be motivated <br /><span style="font-style: italic;"
+      >- Vergil<span /></span
+    >
+  </h2>
   <img src="../assets/icons/icon16.png" alt="😉" />
 </div>
 
