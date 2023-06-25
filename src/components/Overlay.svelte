@@ -11,6 +11,7 @@
   onMount(() => {
     storage.get().then((storage) => {
       getMotivated = storage.getMotivated;
+      motivatedBy = storage.motivatedBy;
     });
   });
 </script>
