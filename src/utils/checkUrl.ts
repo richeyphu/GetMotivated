@@ -1,4 +1,4 @@
-export const isSusDomain = async (url: string) => {
+export const isSusDomain = async (url: string): Promise<boolean> => {
   const name = new URL(url).hostname;
 
   if (susDomains.includes(name)) {
