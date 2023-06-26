@@ -23,11 +23,12 @@ const tabUrl = location.href;
   }
 
   const motivatedEl = `
-    <video class="motivated-vid" src="${videoUrl}"></video>
-
-    <div class="motivated-box">
-        <canvas class="motivated-vid-box"></canvas>
-    </div>              
+    <div id="get__motivated">
+      <video class="motivated__vid" src="${videoUrl}"></video>
+      <div class="motivated__box">
+          <canvas class="motivated__vid__box"></canvas>
+      </div>
+    </div>
   `;
 
   // Check if the URL is sus
@@ -35,15 +36,17 @@ const tabUrl = location.href;
     // Inject the element into the page
     document.body.insertAdjacentHTML('beforeend', motivatedEl);
 
-    const box: HTMLDivElement = document.querySelector('.motivated-box');
-    const video: HTMLVideoElement = document.querySelector('.motivated-vid');
+    const box: HTMLDivElement = document.querySelector('.motivated__box');
+    const video: HTMLVideoElement = document.querySelector('.motivated__vid');
     let width = video.clientWidth;
     let height = video.clientHeight;
 
-    const c: HTMLCanvasElement = document.querySelector('.motivated-vid-box');
+    const c: HTMLCanvasElement = document.querySelector('.motivated__vid__box');
     c.setAttribute('width', String(width));
     c.setAttribute('height', String(height));
-    const ctx = c.getContext('2d', { willReadFrequently: true });
+    const ctx: CanvasRenderingContext2D = c.getContext('2d', {
+      willReadFrequently: true,
+    });
 
     video.addEventListener('play', drawVid);
     video.addEventListener('ended', () => {
