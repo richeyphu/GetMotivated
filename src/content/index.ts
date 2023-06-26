@@ -1,6 +1,6 @@
 import './styles.css';
 
-import { isSusDomain } from '../utils';
+import { isSusDomain, chromaKeyer } from '../utils';
 import { storage } from '../storage';
 
 // Get the current tab's URL
@@ -13,7 +13,7 @@ const tabUrl = location.href;
   if (!getMotivated) return;
 
   // Get motivatedBy video URL
-  let videoUrl;
+  let videoUrl: string;
   try {
     videoUrl = chrome.runtime.getURL(`src/assets/${motivatedBy}.mp4`);
     console.log(motivatedBy);
@@ -63,39 +63,18 @@ const tabUrl = location.href;
 
     function drawVid() {
       ctx.drawImage(video, 0, 0, width, height);
-      // vergil
 
       // Remove green screen
       let frame = ctx.getImageData(0, 0, width, height);
       if (motivatedBy === 'vergil') {
-        for (let i = 0; i < frame.data.length; i += 4) {
-          let r = frame.data[i]; // red
-          let g = frame.data[i + 1]; // green
-          let b = frame.data[i + 2]; // blue
-          if (r < 100 && g > 92 && g < 211 && b < 110) {
-            frame.data[i + 3] = 0;
-          }
-        }
+        chromaKeyer(frame, [0, 100], [93, 210], [0, 105]);
       } else if (motivatedBy === 'nanomachines') {
-        for (let i = 0; i < frame.data.length; i += 4) {
-          let r = frame.data[i]; // red
-          let g = frame.data[i + 1]; // green
-          let b = frame.data[i + 2]; // blue
-          if (r < 100 && g >= 170 && g <= 255 && b < 110) {
-            frame.data[i + 3] = 0;
-          }
-        }
+        chromaKeyer(frame, [0, 100], [170, 255], [0, 110]);
       } else if (motivatedBy === 'kiryu') {
-        for (let i = 0; i < frame.data.length; i += 4) {
-          let r = frame.data[i]; // red
-          let g = frame.data[i + 1]; // green
-          let b = frame.data[i + 2]; // blue
-          if (r < 90 && g >= 170 && g <= 255 && b < 100) {
-            frame.data[i + 3] = 0;
-          }
-        }
+        chromaKeyer(frame, [0, 100], [170, 255], [0, 110]);
       }
       ctx.putImageData(frame, 0, 0);
+
       requestAnimationFrame(drawVid);
     }
   }
