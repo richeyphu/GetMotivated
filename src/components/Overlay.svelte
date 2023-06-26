@@ -20,8 +20,8 @@
   <h1 class="h1">Get Motivated</h1>
 
   <MotivatedSwitch {getMotivated} />
-
   <MotivatedOptions {motivatedBy} />
+
   <h2 class="footer" style="padding-top: 12px;">
     Need to reload page to apply new settings
   </h2>
@@ -31,7 +31,9 @@
       >- Vergil<span /></span
     >
   </h2>
-  <img src="../assets/icons/icon16.png" alt="😉" />
+  <a href="https://github.com/richeyphu/GetMotivated" target="_blank">
+    <img src="../assets/icons/icon16.png" alt="😉" />
+  </a>
 </div>
 
 <style>
