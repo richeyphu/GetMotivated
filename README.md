@@ -1,13 +1,13 @@
 # Get Motivated
 
-**Get Motivated** is a Chrome extension that will simply let Vergil and his friends save you from being 😭.
-
-<!--
 <p align="center">
-  <img width="296" alt="example" src="https://github.com/richeyphu/GetMotivated/assets/55230837/608bec0d-8f31-4bff-b140-a138b48d7ec5">
+  <b>Get Motivated</b> is a Chrome extension that will simply let Vergil and his friends save you from being 😭.
 </p>
--->
-<p align="center"><i>Stop hornie, be motivated.</i></p>
+<p align="center">
+  <!-- <img width="296" alt="example" src="https://github.com/richeyphu/GetMotivated/assets/55230837/608bec0d-8f31-4bff-b140-a138b48d7ec5"> -->
+  <img alt="cover" src="https://github.com/richeyphu/GetMotivated/assets/55230837/382ea09a-2236-4522-b56b-7d9fdb4dd093">
+  <i>Stop hornie, be motivated.</i>
+</p>
 
 ## Features
 
