@@ -19,6 +19,10 @@
 - Run dev server: `pnpm dev`
 - Build the extension: `pnpm build`
 
+If you want to be **motivated** but can't go to nsfw web you can use:
+- [🌶️เว็บส้มตำ](https://somtam.vercel.app)
+- [🐹cutehamster](https://cutehamster.vercel.app)
+
 ## Demo
 
 You can try the simple demo [here](https://richeyphu.github.io/GetMotivated/docs/demo.html).
