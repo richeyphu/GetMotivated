@@ -43,7 +43,7 @@ const tabUrl = location.href;
     const c: HTMLCanvasElement = document.querySelector('.motivated-vid-box');
     c.setAttribute('width', String(width));
     c.setAttribute('height', String(height));
-    const ctx = c.getContext('2d');
+    const ctx = c.getContext('2d', { willReadFrequently: true });
 
     video.addEventListener('play', drawVid);
     video.addEventListener('ended', () => {
