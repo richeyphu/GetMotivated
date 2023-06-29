@@ -29,7 +29,7 @@
 
 ## Demo
 
-You can try the simple live demo [here](https://richeyphu.github.io/GetMotivated/docs/demo.html).
+You can try the simple live demo [here](https://richeyphu.github.io/GetMotivated/demo.html).
 
 If you want to get **motivated** but can't go to nsfw web, you can use:
 
