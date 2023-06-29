@@ -40,7 +40,10 @@
       property="og:description"
       content="Stop hornie, be motivated. Chrome extension that will save you from 😭"
     />
-    <meta property="og:image" content="https://richeyphu.github.io/GetMotivated/assets/cover.jpg" />
+    <meta
+      property="og:image"
+      content="https://richeyphu.github.io/GetMotivated/assets/cover.jpg"
+    />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -54,7 +57,10 @@
       name="twitter:description"
       content="Stop hornie, be motivated. Chrome extension that will save you from 😭"
     />
-    <meta name="twitter:image" content="https://richeyphu.github.io/GetMotivated/assets/cover.jpg" />
+    <meta
+      name="twitter:image"
+      content="https://richeyphu.github.io/GetMotivated/assets/cover.jpg"
+    />
   </head>
   <body>
     <nav class="navbar navbar-light navbar-expand-md">
@@ -83,8 +89,8 @@
         <div class="col-xl-5">
           <h3>😭 Wanna be motivated?</h3>
           <hr />
-          <p>Let Vergil and his friends save you from being 😭.</p>
-          <span style="font-size: 18px">
+          <p>Let Vergil and his friends save you from being 😭</p>
+          <span style="font-size: 1.2rem">
             <strong>Features</strong>
           </span>
           <br />
@@ -93,7 +99,7 @@
             <li>Choose the motivator of your choice</li>
             <li>Auto-detect sussy website</li>
           </ul>
-          <span style="font-size: 18px">
+          <span style="font-size: 1.2rem">
             <strong>How to use Get Motivated:</strong>
           </span>
           <br />
@@ -102,7 +108,7 @@
             <li>You're all set!</li>
           </ol>
           <p>
-            <span style="font-size: 18px">
+            <span style="font-size: 1.2rem">
               <strong>How do I get it?</strong>
               <br />
             </span>
@@ -143,17 +149,45 @@
         <div
           class="mb-4 col-xl-7 offset-xl-0 d-xl-flex align-items-center justify-content-center"
         >
-          <div class="">
+          <div class="px-2">
             <div class="browser-mockup with-url">
               <!-- <img src="http://via.placeholder.com/500x300/fff/eee" /> -->
-              <video
-                class="vid"
-                src="./assets/vergil.webm"
-                autoplay
-                muted
-                loop
-                style="object-fit: fill; width: 100%; height: 100%"
-              />
+              <div
+                class="text-center"
+                style="
+                  font-size: 12rem;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                "
+              >
+                😭
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  overflow: hidden;
+                  width: 100%;
+                  height: 100%;
+                "
+              >
+                <video
+                  class="vid"
+                  src="./assets/vergil.webm"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  width="1920"
+                  height="1080"
+                  style="opacity: 0; object-fit: fill"
+                ></video>
+              </div>
+              <canvas
+                class="vid-box"
+                style="position: relative; width: 100%; height: 100%"
+              ></canvas>
             </div>
           </div>
         </div>
@@ -161,8 +195,8 @@
     </div>
     <footer class="container mt-3">
       <div class="row">
-        <div class="d-flex justify-content-between">
-          <p>Made with 😭 by BeMotivated</p>
+        <div class="d-lg-flex justify-content-lg-between text-center">
+          <p class="mb-1">Made with 😭 by BeMotivated</p>
           <p>GetMotivated - MIT - 2023</p>
         </div>
       </div>
@@ -207,5 +241,35 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const video = document.querySelector('.vid');
+      let width = video.clientWidth;
+      let height = video.clientHeight;
+
+      const c = document.querySelector('canvas');
+      c.setAttribute('width', width);
+      c.setAttribute('height', height);
+      const ctx = c.getContext('2d', { willReadFrequently: true });
+
+      video.addEventListener('play', drawVid);
+
+      function drawVid() {
+        ctx.drawImage(video, 0, 0, width, height);
+
+        // Remove green screen
+        let frame = ctx.getImageData(0, 0, width, height);
+        for (let i = 0; i < frame.data.length; i += 4) {
+          let r = frame.data[i]; // Red
+          let g = frame.data[i + 1]; // Green
+          let b = frame.data[i + 2]; // Blue
+          if (r < 100 && g > 92 && g < 211 && b < 110) {
+            frame.data[i + 3] = 0;
+          }
+        }
+        ctx.putImageData(frame, 0, 0);
+
+        requestAnimationFrame(drawVid);
+      }
+    </script>
   </body>
 </html>
