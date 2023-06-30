@@ -1,11 +1,11 @@
 # Get Motivated
 
 <p align="center">
-  <b>Get Motivated</b> is a Chrome extension that will simply let Vergil and his friends save you from being 😭.
+  <b>Get Motivated</b> is a Chrome extension that will simply let Vergil and his friends save you from being 😭
 </p>
 <p align="center">
   <!-- <img width="296" alt="example" src="https://github.com/richeyphu/GetMotivated/assets/55230837/608bec0d-8f31-4bff-b140-a138b48d7ec5"> -->
-  <img alt="cover" src="https://github.com/richeyphu/GetMotivated/assets/55230837/382ea09a-2236-4522-b56b-7d9fdb4dd093">
+  <img alt="cover" src="docs/assets/cover.jpg">
   <i>Stop hornie, be motivated.</i>
 </p>
 
@@ -18,7 +18,16 @@
 ## Installation
 
 1. Download the latest release from [here](https://github.com/richeyphu/GetMotivated/releases) (or build it yourself).
-2. Load the extension to Chrome by following [this guide](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
+2. Load the extension to your browser by following [this guide](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
+
+## Demo
+
+You can visit our [website](https://richeyphu.github.io/GetMotivated/), or try the simple live demo [here](https://richeyphu.github.io/GetMotivated/demo.html).
+
+If you want to get **motivated** but can't go to nsfw web, you can use:
+
+- [🌶️ เว็บส้มตำ](https://somtam.vercel.app)
+- [🐹 cutehamster](https://cutehamster.vercel.app)
 
 ## Development
 
@@ -26,15 +35,6 @@
 - Install dependencies: `pnpm install`
 - Run dev server: `pnpm dev`
 - Build the extension: `pnpm build`
-
-## Demo
-
-You can try the simple live demo [here](https://richeyphu.github.io/GetMotivated/demo.html).
-
-If you want to get **motivated** but can't go to nsfw web, you can use:
-
-- [🌶️เว็บส้มตำ](https://somtam.vercel.app)
-- [🐹cutehamster](https://cutehamster.vercel.app)
 
 ---
 
