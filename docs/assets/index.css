@@ -9,7 +9,6 @@ body {
   position: relative;
   border-radius: 3px 3px 0 0;
 }
-
 .browser-mockup:before {
   display: block;
   position: absolute;
@@ -20,9 +19,8 @@ body {
   height: 0.5em;
   border-radius: 50%;
   background-color: #f44;
-  box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+  box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #fb5, 3em 0 0 2px #9b3;
 }
-
 .browser-mockup.with-url:after {
   display: block;
   position: absolute;
@@ -34,7 +32,6 @@ body {
   border-radius: 2px;
   background-color: white;
 }
-
 .browser-mockup > * {
   display: block;
 }
