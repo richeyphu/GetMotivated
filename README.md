@@ -5,7 +5,7 @@
 </p>
 <p align="center">
   <!-- <img width="296" alt="example" src="https://github.com/richeyphu/GetMotivated/assets/55230837/608bec0d-8f31-4bff-b140-a138b48d7ec5"> -->
-  <img alt="cover" src="docs/assets/cover.jpg">
+  <img alt="cover" src="docs/assets/img/cover.jpg">
   <i>Stop hornie, be motivated.</i>
 </p>
 
@@ -22,7 +22,7 @@
 
 ## Demo
 
-You can visit our [website](https://richeyphu.github.io/GetMotivated/), or try the simple live demo [here](https://richeyphu.github.io/GetMotivated/demo.html).
+Please check out our [website](https://richeyphu.github.io/GetMotivated/), or try the simple live demo [here](https://richeyphu.github.io/GetMotivated/demo.html).
 
 If you want to get **motivated** but can't go to nsfw web, you can use:
 

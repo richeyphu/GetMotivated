@@ -8,9 +8,9 @@
       name="description"
       content="Stop hornie, be motivated. Chrome extension that will save you from 😭"
     />
-    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <link rel="icon" type="image/png" href="./assets/img/icon.png" />
 
-    <link href="./assets/index.css" rel="stylesheet" />
+    <link href="./assets/css/index.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -42,7 +42,7 @@
     />
     <meta
       property="og:image"
-      content="https://richeyphu.github.io/GetMotivated/assets/cover.jpg"
+      content="https://richeyphu.github.io/GetMotivated/assets/img/cover.jpg"
     />
 
     <!-- Twitter Meta Tags -->
@@ -59,7 +59,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://richeyphu.github.io/GetMotivated/assets/cover.jpg"
+      content="https://richeyphu.github.io/GetMotivated/assets/img/cover.jpg"
     />
   </head>
   <body>
@@ -67,7 +67,7 @@
       <div class="container">
         <a class="navbar-brand" href="#">
           <img
-            src="./assets/icon.png"
+            src="./assets/img/icon.png"
             alt="Logo"
             height="48px"
             width="48px"
@@ -110,6 +110,7 @@
               >here</a
             >✨
           </p>
+
           <span style="font-size: 1.2rem">
             <strong>Features</strong>
           </span>
@@ -119,6 +120,7 @@
             <li>Choose the motivator of your choice</li>
             <li>Auto-detect sussy website</li>
           </ul>
+
           <span style="font-size: 1.2rem">
             <strong>How to use Get Motivated:</strong>
           </span>
@@ -127,6 +129,7 @@
             <li>Install Get Motivated on your browser</li>
             <li>You're all set!</li>
           </ol>
+
           <p>
             <span style="font-size: 1.2rem">
               <strong>How do I get it?</strong>
@@ -166,32 +169,15 @@
             <p>Stop hornie, be motivated.</p>
           </div>
         </div>
+
         <div
           class="mb-4 col-xl-7 offset-xl-0 d-xl-flex align-items-center justify-content-center"
         >
           <div class="px-2">
             <div class="browser-mockup with-url">
               <!-- <img src="http://via.placeholder.com/500x300/fff/eee" /> -->
-              <div
-                class="text-center"
-                style="
-                  font-size: 9rem;
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                "
-              >
-                😭
-              </div>
-              <div
-                style="
-                  position: absolute;
-                  overflow: hidden;
-                  width: 100%;
-                  height: 100%;
-                "
-              >
+              <div class="browser-content text-center">😭</div>
+              <div class="vid-browser">
                 <video
                   class="vid"
                   autoplay
@@ -200,16 +186,12 @@
                   playsinline
                   width="1920"
                   height="1080"
-                  style="opacity: 0; object-fit: fill"
                 >
-                  <source src="./assets/vergil.mp4" type="video/mp4" />
-                  <source src="./assets/vergil.webm" type="video/webm" />
+                  <source src="./assets/video/vergil.mp4" type="video/mp4" />
+                  <source src="./assets/video/vergil.webm" type="video/webm" />
                 </video>
               </div>
-              <canvas
-                class="vid-box"
-                style="position: relative; width: 100%; height: 100%"
-              ></canvas>
+              <canvas class="vid-canvas"></canvas>
             </div>
           </div>
         </div>
@@ -272,37 +254,9 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
+      defer
     ></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script>
-      const video = document.querySelector('.vid');
-      let width = video.clientWidth;
-      let height = video.clientHeight;
-
-      const c = document.querySelector('canvas');
-      c.setAttribute('width', width);
-      c.setAttribute('height', height);
-      const ctx = c.getContext('2d', { willReadFrequently: true });
-
-      video.addEventListener('play', drawVid);
-
-      function drawVid() {
-        ctx.drawImage(video, 0, 0, width, height);
-
-        // Remove green screen
-        let frame = ctx.getImageData(0, 0, width, height);
-        for (let i = 0; i < frame.data.length; i += 4) {
-          let r = frame.data[i]; // Red
-          let g = frame.data[i + 1]; // Green
-          let b = frame.data[i + 2]; // Blue
-          if (r < 100 && g > 92 && g < 211 && b < 105) {
-            frame.data[i + 3] = 0;
-          }
-        }
-        ctx.putImageData(frame, 0, 0);
-
-        requestAnimationFrame(drawVid);
-      }
-    </script>
+    <script defer src="./assets/js/index.js"></script>
   </body>
 </html>

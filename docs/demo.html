@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Motivated - Demo</title>
-    <link rel="icon" type="image/png" href="./assets/icon.png" />
+    <title>Demo | Get Motivated</title>
+    <link rel="icon" type="image/png" href="./assets/img/icon.png" />
 
     <style>
       body {
@@ -46,7 +46,7 @@
           Get Motivated<br />
           <small>Demo</small>
         </h1>
-        <img src="./assets/icon.png" width="48" alt="Motivator" />
+        <img src="./assets/img/icon.png" width="48" alt="Motivator" />
       </center>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ipsum
@@ -96,8 +96,8 @@
     </div>
 
     <video class="vid" playsinline>
-      <source src="./assets/vergil.mp4" type="video/mp4" />
-      <source src="./assets/vergil.webm" type="video/webm" />
+      <source src="./assets/video/vergil.mp4" type="video/mp4" />
+      <source src="./assets/video/vergil.webm" type="video/webm" />
     </video>
 
     <div class="box">
@@ -133,7 +133,7 @@
           let r = frame.data[i]; // Red
           let g = frame.data[i + 1]; // Green
           let b = frame.data[i + 2]; // Blue
-          if (r < 100 && g > 92 && g < 211 && b < 110) {
+          if (r < 100 && g > 92 && g < 211 && b < 105) {
             frame.data[i + 3] = 0;
           }
         }
