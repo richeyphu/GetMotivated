@@ -11,12 +11,14 @@
     "format": "prettier --write \"src/**/*.{js,ts,svelte}\""
   },
   "keywords": [
-    "chrome extension",
+    "chrome",
+    "extension",
     "motivation",
     "meme"
   ],
   "author": "Phu & Unn",
   "license": "MIT",
+  "homepage": "https://richeyphu.github.io/GetMotivated/",
   "repository": {
     "type": "git",
     "url": "https://github.com/richeyphu/GetMotivated.git"
