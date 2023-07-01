@@ -34,7 +34,7 @@
 
   setTheme(getPreferredTheme());
 
-  const showActiveTheme = (theme, focus = false) => {
+  const showActiveTheme = (theme) => {
     const themeSwitcher = document.querySelector('#theme-toggle');
 
     if (!themeSwitcher) {
@@ -55,7 +55,9 @@
     .addEventListener('change', () => {
       const storedTheme = getStoredTheme();
       if (storedTheme !== 'light' && storedTheme !== 'dark') {
-        setTheme(getPreferredTheme());
+        const theme = getPreferredTheme();
+        setTheme(theme);
+        showActiveTheme(theme);
       }
     });
 
