@@ -82,17 +82,28 @@
         >
           <i class="fa-brands fa-github fa-xl"></i>
         </a> -->
-        <span class="d-none d-lg-block">
-          <a
-            class="github-button"
-            href="https://github.com/richeyphu/GetMotivated"
-            data-icon="octicon-star"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star richeyphu/GetMotivated on GitHub"
-            >Star
-          </a>
-        </span>
+        <div class="d-flex flex-row gap-2">
+          <span class="d-none d-lg-block">
+            <a
+              class="github-button"
+              href="https://github.com/richeyphu/GetMotivated"
+              data-icon="octicon-star"
+              data-size="large"
+              data-show-count="true"
+              aria-label="Star richeyphu/GetMotivated on GitHub"
+              >Star
+            </a>
+          </span>
+
+          <div class="align-items-center me-5 me-sm-0">
+            <input type="checkbox" class="checkbox" id="theme-toggle" />
+            <label for="theme-toggle" class="checkbox-label">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <span class="ball"></span>
+            </label>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -102,7 +113,9 @@
           <h3>💢 Wanna be MOTIVATED?</h3>
           <hr />
           <p>
-            Let Vergil and his friends save you from being 😭! Try our live demo
+            Let Vergil and his friends save you from being 😭!
+            <br class="d-none d-xl-block" />
+            Try our live demo
             <a
               href="./demo.html"
               target="_blank"
@@ -152,7 +165,6 @@
               role="button"
               href=""
               target="_blank"
-              style="margin: 5px"
               ><i class="fab fa-chrome"></i>&nbsp;Chrome webstore</a
             >
             <a
@@ -160,7 +172,6 @@
               role="button"
               href=""
               target="_blank"
-              style="margin: 5px"
               ><i class="fab fa-firefox-browser"></i>&nbsp;Firefox addons</a
             >
              -->
@@ -258,5 +269,6 @@
     ></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script defer src="./assets/js/index.js"></script>
+    <script defer src="./assets/js/color-modes.js"></script>
   </body>
 </html>
